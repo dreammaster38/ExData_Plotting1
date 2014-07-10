@@ -10,6 +10,9 @@
 library(lubridate)
 library(dplyr)
 
+# set local explicitly to US English
+Sys.setlocale("LC_TIME","English_United States.1252")
+
 # define some variables for later use
 mainDir <- getwd()
 subDir <- "data"
@@ -107,5 +110,7 @@ plot(hpcData$DateTime,
      type="l",
      xlab="datetime",
      ylab="Global_reactive_power")
-
 dev.off()
+
+# set local back to my home local German
+Sys.setlocale("LC_TIME","German_Germany.1252")

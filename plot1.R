@@ -6,6 +6,9 @@
 library(lubridate)
 library(dplyr)
 
+# set local explicitly to US English
+Sys.setlocale("LC_TIME","English_United States.1252")
+
 # define some variables for later use
 mainDir <- getwd()
 subDir <- "data"
@@ -64,3 +67,6 @@ png("plot1.png", width=480, height=480)
 # and write a PNG to disk
 hist(hpcData$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
 dev.off()
+
+# set local back to my home local German
+Sys.setlocale("LC_TIME","German_Germany.1252")

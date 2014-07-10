@@ -6,6 +6,9 @@
 library(lubridate)
 library(dplyr)
 
+# set local explicitly to US English
+Sys.setlocale("LC_TIME","English_United States.1252")
+
 # define some variables for later use
 mainDir <- getwd()
 subDir <- "data"
@@ -66,3 +69,6 @@ lines(hpcData$DateTime, hpcData$Sub_metering_2, col="red")
 lines(hpcData$DateTime, hpcData$Sub_metering_3, col="blue")
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
 dev.off()
+
+# set local back to my home local German
+Sys.setlocale("LC_TIME","German_Germany.1252")

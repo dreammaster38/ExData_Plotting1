@@ -6,6 +6,9 @@
 library(lubridate)
 library(dplyr)
 
+# set local explicitly to US English
+Sys.setlocale("LC_TIME","English_United States.1252")
+
 # define some variables for later use
 mainDir <- getwd()
 subDir <- "data"
@@ -62,3 +65,6 @@ hpcData$DateTime <- ymd_hms(paste(hpcData$Date, hpcData$Time))
 png("plot2.png", width=480, height=480)
 plot(hpcData$DateTime, hpcData$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()
+
+# set local back to my home local German
+Sys.setlocale("LC_TIME","German_Germany.1252")
